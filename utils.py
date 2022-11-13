@@ -44,3 +44,12 @@ def get_by_skills(json_file, skill):
         if str.lower(skill) in candidates_skills_list:
             candidates_list.append(candidate.get_all())
     return candidates_list
+
+
+def get_by_name(json_file, name):
+    candidates = load_candidates(json_file)
+    candidates_list = []
+    for candidate in candidates:
+        if str.lower(name) in str.lower(candidate.name):
+            candidates_list.append(candidate.get_all())
+    return candidates_list
